@@ -60,12 +60,10 @@ function install_alp() {
   (
     echo "∗ Downloading and installing alp..."
     mkdir -p "${install_path}/bin"
-    curl --silent --location --create-dirs --output "$source_path" "$download_url" || fail "Could not download alp $version"
-    cd "$distination_path"
-    unzip alp.zip >/dev/null || fail "Could not uncompress"
-    rm "$source_path"
-    mv alp* alp
+    curl --silent --location --output "$source_path" -C - "$download_url" || fail "Could not download alp $version"
+    unzip "$source_path" -d "$distination_path" >/dev/null || fail "Could not uncompress"
     chmod +x "${distination_path}/alp" || fail "Could not find alp binary"
+    rm "$source_path"
     echo "The installation was successful!"
   ) || (
     rm -rf $install_path
