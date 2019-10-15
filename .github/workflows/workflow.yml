@@ -1,0 +1,27 @@
+name: Main workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        alp: [0.0.1, 1.0.2]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install asdf
+        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+
+      - name: Install alp and run test
+        run: |
+          . $HOME/asdf/asdf.sh
+          asdf plugin-add alp $GITHUB_WORKSPACE
+          asdf install alp ${{ matrix.alp }}
+          asdf global alp ${{ matrix.alp }}
+          alp --version
