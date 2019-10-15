@@ -62,8 +62,6 @@ function install_alp() {
     mkdir -p "${install_path}/bin"
     curl --silent --location --output "$source_path" -C - "$download_url" || fail "Could not download alp $version"
     unzip "$source_path" -d "$distination_path"
-    cd "$distination_path"
-    mv * alp
     chmod +x "${distination_path}/alp" || fail "Could not find alp binary"
     rm "source_path"
     echo "The installation was successful!"
