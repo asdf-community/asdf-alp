@@ -43,13 +43,7 @@ function install_alp() {
   case "$(uname -m)" in
     x86_64) architecture="amd64" ;;
     i386 | i686) architecture="386" ;;
-    arm | aarch64)
-      case "$platform" in
-        freebsd | arm | netbsd) exit 0 ;;
-        *) fail "Unsupported platform and architecture combination" ;;
-      esac
-      architecture="arm"
-      ;;
+    arm | aarch64) architecture="arm" ;;
     *) fail "Unsupported architecture" ;;
   esac
 
