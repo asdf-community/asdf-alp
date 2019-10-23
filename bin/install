@@ -28,7 +28,7 @@ function install_alp() {
   local install_path=$3
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-alp supports release installs only."
+    fail "asdf-alp supports release installs only"
   fi
 
   local platform
