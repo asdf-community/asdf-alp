@@ -18,7 +18,7 @@ jobs:
       - name: Install asdf
         run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
 
-      - name: Install alp and run test
+      - name: Install alp and print alp version
         run: |
           . $HOME/asdf/asdf.sh
           asdf plugin-add alp $GITHUB_WORKSPACE
@@ -26,8 +26,25 @@ jobs:
           asdf global alp ${{ matrix.alp }}
           alp --version
 
-  shellcheck:
+  test:
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install asdf
+        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+
+      - name: Test plugin
+        run: |
+          . $HOME/asdf/asdf.sh
+          asdf plugin-add alp $GITHUB_WORKSPACE
+          bats test
+
+  lint:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v1
       - name: Run ShellCheck
