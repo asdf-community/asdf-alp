@@ -27,6 +27,10 @@ function install_alp() {
   local version=$2
   local install_path=$3
 
+  if [ "$install_type" != "version" ]; then
+    fail "asdf-alp supports release installs only."
+  fi
+
   local platform
 
   case "$OSTYPE" in
@@ -60,7 +64,7 @@ function install_alp() {
     rm "$source_path"
     echo "The installation was successful!"
   ) || (
-    rm -rf $install_path
+    rm -rf "$install_path"
     fail "An error occurred"
   )
 }
