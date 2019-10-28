@@ -1,6 +1,6 @@
 <div align="center">
 <h1>asdf-alp 📦</h1>
-alp plugin for asdf version manager
+<span><a href="https://github.com/tkuchiki/alp">alp</a> plugin for asdf version manager</span>
 </div>
 <hr />
 
