@@ -1,5 +1,4 @@
 <div align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 <h1>asdf-alp</h1>
 <span><a href="https://github.com/tkuchiki/alp">alp</a> plugin for asdf version manager</span>
 </div>
@@ -8,10 +7,9 @@
 **Note**: This plugin only supports alp **_0.3.0_** or later.
 
 [![Main workflow](https://github.com/asdf-community/asdf-alp/workflows/Main%20workflow/badge.svg)](https://github.com/asdf-community/asdf-alp/actions)
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/asdf-community/asdf-alp.svg)](https://isitmaintained.com/project/asdf-community/asdf-alp 'Average time to resolve an issue')
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/asdf-community/asdf-alp.svg)](https://isitmaintained.com/project/asdf-community/asdf-alp 'Percentage of issues still open')
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![License](https://img.shields.io/github/license/asdf-community/asdf-alp?color=brightgreen)](https://github.com/asdf-community/asdf-alp/blob/master/LICENSE)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![License](https://img.shields.io/github/license/asdf-community/asdf-alp?style=flat-square&color=brightgreen)](https://github.com/asdf-community/asdf-alp/blob/master/LICENSE)
 
 ## Installation
 
@@ -24,9 +22,10 @@ asdf plugin-add alp https://github.com/asdf-community/asdf-alp.git
 Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to
 install & manage versions.
 
-## Contributors ✨
+## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
@@ -38,4 +37,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
+
+## License
+
+&copy; Contributors Licensed under the
+[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
