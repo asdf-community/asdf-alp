@@ -1,13 +1,16 @@
 name: Main workflow
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 5"
 
 jobs:
   build:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-        alp: [0.3.0, 1.0.2]
 
     runs-on: ${{ matrix.os }}
 
@@ -22,9 +25,9 @@ jobs:
         run: |
           . $HOME/asdf/asdf.sh
           asdf plugin-add alp $GITHUB_WORKSPACE
-          asdf install alp ${{ matrix.alp }}
-          asdf global alp ${{ matrix.alp }}
-          alp --version
+          asdf install alp latest
+        env:
+          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
     runs-on: macOS-latest
