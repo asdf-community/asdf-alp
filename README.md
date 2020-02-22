@@ -7,7 +7,7 @@
 **Note**: This plugin only supports alp **_0.3.0_** or later.
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/asdf-community/asdf-alp/Main%20workflow?style=flat-square)](https://github.com/asdf-community/asdf-alp/actions)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/github/license/asdf-community/asdf-alp?style=flat-square&color=brightgreen)](https://github.com/asdf-community/asdf-alp/blob/master/LICENSE)
 
