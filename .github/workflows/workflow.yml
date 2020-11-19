@@ -24,7 +24,7 @@ jobs:
       - name: asdf_plugin_test
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: asdf-vm/actions/plugin-test@v1.0.0
+        uses: asdf-vm/actions/plugin-test@v1
         with:
           command: alp --version
 
