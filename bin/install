@@ -18,7 +18,8 @@
 set -eo pipefail
 
 fail() {
-  echo -e "\e[31mFail:\e[m $*"
+  ESC=$(printf '\33')
+  echo "${ESC}[31mFail:${ESC}[m $*"
   exit 1
 }
 
