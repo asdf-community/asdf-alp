@@ -48,6 +48,7 @@ install_alp() {
     x86_64) architecture="amd64" ;;
     i386 | i686) architecture="386" ;;
     arm | aarch64) architecture="arm" ;;
+    arm64) architecture="arm64" ;;
     *) fail "Unsupported architecture" ;;
   esac
 
