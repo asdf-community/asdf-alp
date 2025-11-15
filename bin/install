@@ -1,58 +1,10 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -euo pipefail
 
-fail() {
-  echo "Fail: $*"
-  exit 1
-}
+current_script_path=${BASH_SOURCE[0]}
+plugin_dir=$(dirname "$(dirname "$current_script_path")")
 
-install_alp() {
-  local install_type=$1
-  local version=$2
-  local install_path=$3
+source "${plugin_dir}/lib/utils.bash"
 
-  if [ "$install_type" != "version" ]; then
-    fail "asdf-alp supports release installs only"
-  fi
-
-  local platform
-
-  case "$OSTYPE" in
-  darwin*) platform="darwin" ;;
-  freebsd*) platform="freebsd" ;;
-  linux*) platform="linux" ;;
-  netbsd*) platform="netbsd" ;;
-  openbsd*) platform="openbsd" ;;
-  *) fail "Unsupported platform" ;;
-  esac
-
-  local architecture
-
-  case "$(uname -m)" in
-  x86_64) architecture="amd64" ;;
-  i386 | i686) architecture="386" ;;
-  arm | aarch64) architecture="arm" ;;
-  arm64) architecture="arm64" ;;
-  *) fail "Unsupported architecture" ;;
-  esac
-
-  local download_url="https://github.com/tkuchiki/alp/releases/download/v${version}/alp_${platform}_${architecture}.zip"
-  local source_path="${install_path}/bin/alp.zip"
-  local distination_path="${install_path}/bin"
-
-  (
-    echo "∗ Downloading and installing alp..."
-    mkdir -p "${install_path}/bin"
-    curl --silent --location --output "$source_path" -C - "$download_url" || fail "Could not download alp $version"
-    unzip "$source_path" -d "$distination_path" >/dev/null || fail "Could not uncompress"
-    chmod +x "${distination_path}/alp" || fail "Could not find alp binary"
-    rm "$source_path"
-    echo "The installation was successful!"
-  ) || (
-    rm -rf "$install_path"
-    fail "An error occurred"
-  )
-}
-
-install_alp "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
+install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"

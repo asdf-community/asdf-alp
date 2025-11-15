@@ -4,10 +4,6 @@
 
 **Note**: This plugin only supports alp **_0.3.0_** or later.
 
-## Build History
-
-[![Build history](https://buildstats.info/github/chart/asdf-community/asdf-alp?branch=master)](https://github.com/asdf-community/asdf-alp/actions)
-
 ## Installation
 
 ```bash
