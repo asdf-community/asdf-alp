@@ -15,7 +15,7 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - name: asdf_plugin_test
+      - name: Test plugin
         uses: asdf-vm/actions/plugin-test@v1
         with:
           command: alp --version
@@ -25,16 +25,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Install asdf
+      - name: Set-up asdf
         uses: asdf-vm/actions/setup@v1
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Install bats-core
-        run: brew install bats-core
+      - name: Install cram
+        run: brew install cram
       - name: Test plugin
-        env:
-          GITHUB_API_TOKEN: ${{ github.token }}
-        run: bats test
+        run: |
+          asdf plugin add alp .
+          cram test
 
   lint:
     runs-on: ubuntu-latest
