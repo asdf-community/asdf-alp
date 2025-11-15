@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Test plugin
-        uses: asdf-vm/actions/plugin-test@v1
+        uses: asdf-vm/actions/plugin-test@v3
         with:
           command: alp --version
 
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
       - name: Set-up asdf
-        uses: asdf-vm/actions/setup@v1
+        uses: asdf-vm/actions/setup@v3
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
       - name: Install cram
