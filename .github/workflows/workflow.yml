@@ -40,10 +40,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-      - name: Install shellcheck
-        run: brew install shellcheck
+      - name: Install tools
+        uses: asdf-vm/actions/install@v4
       - name: Run ShellCheck
         run: make lint
 
@@ -52,9 +50,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-      - name: Install shfmt
-        run: brew install shfmt
+      - name: Install tools
+        uses: asdf-vm/actions/install@v4
       - name: Run shfmt
         run: make fmt-check
